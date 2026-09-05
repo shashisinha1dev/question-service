@@ -3,7 +3,6 @@ package com.project.question_service.controller;
 import com.project.question_service.model.Question;
 import com.project.question_service.service.QuestionService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +16,13 @@ public class QuestionController {
     QuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
+    //Generate random Questions for Quiz-service
+//    @GetMapping("/generate")
+//    public ResponseEntity<List<Question>> generateRandomQuestionByCategory(@RequestParam String Category,Integer numQuestion){
+//        return ResponseEntity.ok(questionService.generateRandomQuestionByCategory());
+//    }
+
+
     @GetMapping("/all")
     public ResponseEntity<List<Question>> getAllQuestion(){
         return ResponseEntity.ok(questionService.getAllQuestion());
